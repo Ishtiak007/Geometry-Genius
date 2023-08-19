@@ -12,3 +12,18 @@ function calculateTriangleArea() {
   const areaSpan = document.getElementById("triangle-area");
   areaSpan.innerText = area;
 }
+
+// rectangle
+function calculateRectangleArea() {
+  const rectangleWidthField = document.getElementById("rectangle-width");
+  const rectangleWidthValueString = rectangleWidthField.value;
+  const rectangleWidthValue = parseFloat(rectangleWidthValueString);
+
+  const rectangleLength = document.getElementById("rectangle-length");
+  const rectangleLengthValueString = rectangleLength.value;
+  const rectangleLengthValue = parseFloat(rectangleLengthValueString);
+
+  const rectangleArea = rectangleWidthValue * rectangleLengthValue;
+  const areaSpan = document.getElementById("rectangle-area");
+  areaSpan.innerText = rectangleArea;
+}
