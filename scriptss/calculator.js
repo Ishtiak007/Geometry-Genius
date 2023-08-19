@@ -49,6 +49,7 @@ function calculateEllipseArea() {
   const valueOfB = getSecondValue("ellipse-minor-radius");
   const area = 3.1416 * valueOfA * valueOfB;
   setValue("ellipse-area", area);
+  addToCalculationEntry("Ellipse Area Holo: ", area);
 }
 
 function getInputValue(inputValue) {
@@ -66,4 +67,14 @@ function getSecondValue(secondValue) {
 function setValue(elementId, value) {
   const element = document.getElementById(elementId);
   element.innerText = value;
+}
+// add to calculation entry
+function addToCalculationEntry(areaType, area) {
+  console.log(areaType + " " + area);
+  const calculationEntry = document.getElementById("calculation-entry");
+  const p = document.createElement("p");
+  p.innerHTML = `
+  ${areaType} ${area} cm<sup>2</sup> <button class="btn btn-success">Convert</button>
+  `;
+  calculationEntry.appendChild(p);
 }
