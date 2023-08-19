@@ -42,3 +42,28 @@ function calculateParallelogramArea() {
   const areaSpan = document.getElementById("parallelogram-area");
   areaSpan.innerText = parallelogramArea;
 }
+
+// .......
+function calculateEllipseArea() {
+  const valueOfA = getInputValue("ellipse-major-radius");
+  const valueOfB = getSecondValue("ellipse-minor-radius");
+  const area = 3.1416 * valueOfA * valueOfB;
+  setValue("ellipse-area", area);
+}
+
+function getInputValue(inputValue) {
+  const inputField = document.getElementById(inputValue);
+  const inputFieldValueString = inputField.value;
+  const inputFieldValue = parseFloat(inputFieldValueString);
+  return inputFieldValue;
+}
+function getSecondValue(secondValue) {
+  const inputField = document.getElementById(secondValue);
+  const inputFieldValueString = inputField.value;
+  const inputFieldValue = parseFloat(inputFieldValueString);
+  return inputFieldValue;
+}
+function setValue(elementId, value) {
+  const element = document.getElementById(elementId);
+  element.innerText = value;
+}
